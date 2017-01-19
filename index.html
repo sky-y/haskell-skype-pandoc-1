@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="藤原 惟 / すかいゆき (@sky_y)">
+  <title>Pandocチュートリアル 第1回 Pandocでドキュメントを変換しよう</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js-3.4.0/css/reveal.css">
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="reveal.js-3.4.0/css/theme/sky-sky-y.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js-3.4.0/css/print/pdf.css' : 'reveal.js-3.4.0/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js-3.4.0/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+  <h1 class="title">Pandocチュートリアル 第1回 Pandocでドキュメントを変換しよう</h1>
+  <p class="author">藤原 惟 / すかいゆき (<span class="citation" data-cites="sky">@sky</span>_y)</p>
+  <p class="date">2017年1月20日</p>
+</section>
+
+<section id="このスライドをどう作ったか" class="slide level1">
+<h1>このスライドをどう作ったか</h1>
+</section>
+<section id="reveal.jsのライブラリを入れる" class="slide level1">
+<h1>reveal.jsのライブラリを入れる</h1>
+<ul>
+<li><a href="https://github.com/hakimel/reveal.js/releases">Releases · hakimel/reveal.js</a> の「Downloads」にあるzipまたはtar.gzをダウンロードし、展開する</li>
+<li>フォルダの中身のうち、<strong>index.html以外</strong>を全て目的のフォルダにコピーする</li>
+</ul>
+</section>
+<section id="markdownを書く" class="slide level1">
+<h1>Markdownを書く</h1>
+<ul>
+<li>PandocのMarkdownで書く
+<ul>
+<li><a href="http://pandoc.org/MANUAL.html#pandocs-markdown">Pandoc - Pandoc User’s Guide</a></li>
+</ul></li>
+<li>このスライド自体はGitHub Pagesでアップされています</li>
+<li>ソースコード:</li>
+</ul>
+</section>
+<section id="pandoc" class="slide level1">
+<h1>pandoc</h1>
+<pre><code>$ pandoc -s index.md -t revealjs -o index.html</code></pre>
+</section>
+<section id="例-connpassのhtmlからmarkdownを求めたい" class="slide level1">
+<h1>例: connpassのHTMLからMarkdownを求めたい</h1>
+</section>
+<section id="準備の際に実際にやりました" class="slide level1">
+<h1>準備の際に実際にやりました</h1>
+<ul>
+<li>オーガナイザーさんにconnpassページ原稿を渡したい</li>
+<li>やっぱりMarkdownで書きたい
+<ul>
+<li><a href="http://help.connpass.com/organizers/markdown">connpass自体はMarkdown記法を持っている</a></li>
+</ul></li>
+<li>藤原はconnpassの本イベントページを編集する権限がない
+<ul>
+<li><strong>そうだ、HTMLをPandocで読み込めば、Markdownがゲットできる！！</strong></li>
+</ul></li>
+</ul>
+</section>
+<section id="connpassのhtmlを取得" class="slide level1">
+<h1>connpassのHTMLを取得</h1>
+<ul>
+<li><a href="https://haskell-with-skype.connpass.com/event/48446/">Pandocチュートリアル 第1回 - connpass</a></li>
+<li>メニューアイコン（または右クリック）で「ソースを表示」</li>
+<li>そのまま<code>Command-S (Ctrl-C)</code>でHTMLを保存(<code>connpass.html</code>とする)</li>
+</ul>
+</section>
+<section id="q-このmarkdownは何の方言に近いか" class="slide level1">
+<h1>Q: このMarkdownは何の方言に近いか？</h1>
+<ul>
+<li><a href="http://help.connpass.com/organizers/markdown">connpassで使えるMarkdown記法 - connpass ご利用ガイド</a></li>
+<li>ヒント
+<ul>
+<li><code>http://connpass.com URLは自動的にリンクになります。</code>
+<ul>
+<li><a href="http://connpass.com" class="uri">http://connpass.com</a> URLは自動的にリンクになります。</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="a-github-flavored-markdowngfmに近い" class="slide level1">
+<h1>A: GitHub Flavored Markdown(gfm)に近い</h1>
+<ul>
+<li>Pandocのデフォルトで使えるMarkdown方言のうち、自動リンク記法はgfmが対応</li>
+<li>このように、出所の分からないMarkdown仕様でも、ある程度なら処理系を推測できる
+<ul>
+<li>今後の課題として、メジャーなサービスについて方言を比較できるようにしたい</li>
+</ul></li>
+</ul>
+</section>
+<section id="pandocでmarkdownに変換" class="slide level1">
+<h1>PandocでMarkdownに変換</h1>
+<pre><code>$ pandoc connpass.html -t markdown_github -o connpass.md</code></pre>
+</section>
+<section id="質問" class="slide level1">
+<h1>質問</h1>
+<ul>
+<li>Slackにて受け付けます</li>
+<li>TwitterでもOKです
+<ul>
+<li><a href="https://twitter.com/sky_y">@sky_y | Twitter</a></li>
+</ul></li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="reveal.js-3.4.0/lib/js/head.min.js"></script>
+  <script src="reveal.js-3.4.0/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        // Transition style
+        transition: 'fade', // none/fade/slide/convex/concave/zoom
+        // Transition speed
+        transitionSpeed: 'fast', // default/fast/slow
+        // Factor of the display size that should remain empty around the content
+        margin: 0,
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js-3.4.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js-3.4.0/plugin/zoom-js/zoom.js', async: true },
+              { src: 'reveal.js-3.4.0/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
