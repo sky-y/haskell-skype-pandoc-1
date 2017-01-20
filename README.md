@@ -1,6 +1,9 @@
 # Pandocチュートリアル 第1回
 
-connpassイベントページ: [Pandocチュートリアル 第1回 - connpass](https://haskell-with-skype.connpass.com/event/48446/)
+- connpassイベントページ: [Pandocチュートリアル 第1回 - connpass](https://haskell-with-skype.connpass.com/event/48446/)
+- スライド(HTML/reveal.js): <https://sky-y.github.io/haskell-skype-pandoc-1/>
+- スライドのMarkdown(Pandoc)ソース: [haskell-skype-pandoc-1/index_github.md](https://github.com/sky-y/haskell-skype-pandoc-1/blob/master/index_github.md)
+- GitHubリポジトリ全体: [sky-y/haskell-skype-pandoc-1](https://github.com/sky-y/haskell-skype-pandoc-1)
 
 ## 内容
 
