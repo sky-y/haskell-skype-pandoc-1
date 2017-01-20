@@ -235,6 +235,16 @@
 <section id="準備-pandocをインストールする" class="slide level1">
 <h1>準備: Pandocをインストールする</h1>
 </section>
+<section id="ターミナルを開く" class="slide level1">
+<h1>ターミナルを開く</h1>
+<ul>
+<li>Mac: ターミナル.app or iTerm2</li>
+<li>Windows: (今回は)コマンドプロンプト
+<ul>
+<li>(分かっている方は)お好きなターミナルでも結構です</li>
+</ul></li>
+</ul>
+</section>
 <section id="pandocのインストール" class="slide level1">
 <h1>Pandocのインストール</h1>
 <ul>
@@ -250,7 +260,10 @@
 <li>パッケージマネージャでインストール
 <ul>
 <li>Mac(<a href="http://brew.sh/index_ja.html">Homebrew</a>): <code>$ brew install pandoc</code></li>
-<li>Windows(<a href="https://chocolatey.org/">Chocolatey</a>): <code>&gt; cinst pandoc</code></li>
+<li>Windows(<a href="https://chocolatey.org/">Chocolatey</a>): <code>&gt; cinst pandoc</code>
+<ul>
+<li>Chocolateyのみ、PowerShell（管理者権限付き）がおすすめ</li>
+</ul></li>
 <li>Linux(Debian): <code>$ sudo apt-get install pandoc</code></li>
 </ul></li>
 </ul>
@@ -321,6 +334,7 @@ $ echo &quot;**Hello**&quot; | pandoc -f markdown -t html
 <li>Markdown (raw): <a href="https://raw.githubusercontent.com/sky-y/haskell-skype-pandoc-1/master/index.p.md" class="uri">https://raw.githubusercontent.com/sky-y/haskell-skype-pandoc-1/master/index.p.md</a></li>
 </ul></li>
 </ul>
+<pre><code>$ git clone https://github.com/sky-y/haskell-skype-pandoc-1.git`</code></pre>
 </section>
 <section id="reveal.jsのライブラリを入れる" class="slide level1">
 <h1>reveal.jsのライブラリを入れる</h1>
@@ -337,13 +351,19 @@ $ echo &quot;**Hello**&quot; | pandoc -f markdown -t html
 <li>このスライドでは<code>sky</code>をカスタマイズしたCSS(<code>sky-sky-y</code>)を作った</li>
 <li>上記のGitHubリポジトリの「reveal.js-3.4.0/css/theme」に置いている</li>
 </ul></li>
+<li><code>$ cd haskell-skype-pandoc-1/</code></li>
 </ul></li>
 </ul>
 </section>
 <section id="markdownを書く" class="slide level1">
 <h1>Markdownを書く</h1>
 <ul>
-<li>PandocのMarkdownで書く
+<li>今回はタイトルを編集してみましょう
+<ul>
+<li>2行目: <code>title: (ここを変更する)</code></li>
+<li>3行目: <code>author: (ここを変更する)</code></li>
+</ul></li>
+<li>その他は、PandocのMarkdownで書く
 <ul>
 <li><a href="http://pandoc.org/MANUAL.html#pandocs-markdown">Pandoc - Pandoc User’s Guide</a>
 <ul>
@@ -352,8 +372,8 @@ $ echo &quot;**Hello**&quot; | pandoc -f markdown -t html
 </ul></li>
 </ul>
 </section>
-<section id="ヘッダに色々書く" class="slide level1">
-<h1>ヘッダに色々書く</h1>
+<section id="補足-ヘッダについて" class="slide level1">
+<h1>補足: ヘッダについて</h1>
 <ul>
 <li>ヘッダには2種類ある
 <ul>
@@ -369,8 +389,8 @@ $ echo &quot;**Hello**&quot; | pandoc -f markdown -t html
 <section class="slide level1">
 
 <pre><code>---
-title: Pandocチュートリアル 第1回 Pandocでドキュメントを変換しよう
-author: 藤原 惟 / すかいゆき (@sky\_y)
+title: ほげ
+author: (あなたの名前)
 date: 2017年1月20日
 revealjs-url: reveal.js-3.4.0
 theme: sky-sky-y
@@ -386,6 +406,11 @@ transition: fade
 <li><code>-t</code>: 出力フォーマット(reveal.js)</li>
 <li><code>-o</code>: 出力ファイル名</li>
 </ul>
+</section>
+<section id="プレゼンファイルを開く" class="slide level1">
+<h1>プレゼンファイルを開く</h1>
+<pre><code>$ open index.html    # Mac/Linux
+&gt; start index.html   # Windows</code></pre>
 </section>
 <section id="例-connpassのhtmlからmarkdownを求めたい" class="slide level1">
 <h1>例: connpassのHTMLからMarkdownを求めたい</h1>
@@ -431,7 +456,7 @@ transition: fade
 <li>Pandocのデフォルトで使えるMarkdown方言のうち、自動リンク記法はgfmが対応</li>
 <li>このように、出所の分からないMarkdown仕様でも、ある程度なら処理系を推測できる
 <ul>
-<li>今後の課題として、メジャーなサービスについて方言を比較できるようにしたい</li>
+<li>（今後の課題として、メジャーなサービスについて方言を比較できるようにしたい）</li>
 </ul></li>
 </ul>
 </section>
@@ -442,7 +467,7 @@ transition: fade
 <section id="質問作業もくもく会" class="slide level1">
 <h1>質問・作業・もくもく会</h1>
 <ul>
-<li>Slackにて受け付けます</li>
+<li>Slackにて受け付けます （<code>#field</code>）</li>
 <li>TwitterでもOKです
 <ul>
 <li><a href="https://twitter.com/sky_y">@sky_y | Twitter</a></li>

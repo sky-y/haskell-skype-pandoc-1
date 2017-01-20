@@ -169,6 +169,14 @@ margin: 0
 
 ----
 
+# ターミナルを開く
+
+- Mac: ターミナル.app or iTerm2
+- Windows: (今回は)コマンドプロンプト
+    - (分かっている方は)お好きなターミナルでも結構です
+
+----
+
 # Pandocのインストール
 
 - Haskell処理系は不要です
@@ -179,6 +187,7 @@ margin: 0
 - パッケージマネージャでインストール
     - Mac([Homebrew](http://brew.sh/index_ja.html)): `$ brew install pandoc`
     - Windows([Chocolatey](https://chocolatey.org/)): `> cinst pandoc`
+        - Chocolateyのみ、PowerShell（管理者権限付き）がおすすめ
     - Linux(Debian): `$ sudo apt-get install pandoc`
 
 ----
@@ -244,6 +253,9 @@ $ echo "**Hello**" | pandoc -f markdown -t html -o hello.pdf
 - GitHubリポジトリ: <https://github.com/sky-y/haskell-skype-pandoc-1>
     - Markdown (raw): <https://raw.githubusercontent.com/sky-y/haskell-skype-pandoc-1/master/index.p.md>
 
+```
+$ git clone https://github.com/sky-y/haskell-skype-pandoc-1.git`
+```
 
 # reveal.jsのライブラリを入れる
 
@@ -254,18 +266,23 @@ $ echo "**Hello**" | pandoc -f markdown -t html -o hello.pdf
     - テーマ(CSS)をカスタマイズしている
         - このスライドでは`sky`をカスタマイズしたCSS(`sky-sky-y`)を作った
         - 上記のGitHubリポジトリの「reveal.js-3.4.0/css/theme」に置いている
+    - `$ cd haskell-skype-pandoc-1/`
 
 ----
 
 # Markdownを書く
 
-- PandocのMarkdownで書く
+- 今回はタイトルを編集してみましょう
+    - 2行目: `title: (ここを変更する)`
+    - 3行目: `author: (ここを変更する)`
+- その他は、PandocのMarkdownで書く
     - [Pandoc - Pandoc User’s Guide](http://pandoc.org/MANUAL.html#pandocs-markdown)
         - [Pandoc ユーザーズガイド 日本語版](http://sky-y.github.io/site-pandoc-jp/users-guide/)
 
+
 ----
 
-# ヘッダに色々書く
+# 補足: ヘッダについて
 
 - ヘッダには2種類ある
     - Title block (`%`ではじまる、簡潔)
@@ -276,8 +293,8 @@ $ echo "**Hello**" | pandoc -f markdown -t html -o hello.pdf
 ----
 
     ---
-    title: Pandocチュートリアル 第1回 Pandocでドキュメントを変換しよう
-    author: 藤原 惟 / すかいゆき (@sky\_y)
+    title: ほげ
+    author: (あなたの名前)
     date: 2017年1月20日
     revealjs-url: reveal.js-3.4.0
     theme: sky-sky-y
@@ -296,6 +313,15 @@ $ pandoc index.p.md -s -t revealjs -o index.html
 - `-s`: standalone (ヘッダ付きの完全なファイルを出力)
 - `-t`: 出力フォーマット(reveal.js)
 - `-o`: 出力ファイル名
+
+----
+
+# プレゼンファイルを開く
+
+```
+$ open index.html    # Mac/Linux
+> start index.html   # Windows
+```
 
 ----
 
@@ -334,7 +360,7 @@ $ pandoc index.p.md -s -t revealjs -o index.html
 
 - Pandocのデフォルトで使えるMarkdown方言のうち、自動リンク記法はgfmが対応
 - このように、出所の分からないMarkdown仕様でも、ある程度なら処理系を推測できる
-    - 今後の課題として、メジャーなサービスについて方言を比較できるようにしたい
+    - （今後の課題として、メジャーなサービスについて方言を比較できるようにしたい）
 
 ----
 
@@ -348,7 +374,7 @@ $ pandoc connpass.html -t markdown_github -o connpass.md
 
 # 質問・作業・もくもく会
 
-- Slackにて受け付けます
+- Slackにて受け付けます （`#field`）
 - TwitterでもOKです
     - [\@sky\_y \| Twitter](https://twitter.com/sky_y)
 
