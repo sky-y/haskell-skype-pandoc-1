@@ -409,7 +409,11 @@ $ pandoc input.tex -s -o output.docx
 
 ----
 
-# 補足: Pandocの今後の課題
+# 補足
+
+----
+
+# Pandocの今後の課題
 
 - 日本語に特化した文書フォーマットにほとんど対応していない
     - 書籍におけるルビや圏点など
@@ -421,6 +425,22 @@ $ pandoc input.tex -s -o output.docx
 
 ----
 
+
+
+# ATOM向け: markdown-preview-enhanced
+
+- <https://atom.io/packages/markdown-preview-enhanced>
+- 高機能
+- お手軽（依存パッケージが少ない）
+
+----
+
 # 数式プレビュー
 
 $$E = mc^2$$
+
+```
+$$E = mc^2$$
+```
+
+----
