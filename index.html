@@ -412,12 +412,13 @@ transition: fade
 <pre><code>$ open index.html    # Mac/Linux
 &gt; start index.html   # Windows</code></pre>
 </section>
+<section id="htmlを変換してみる" class="slide level1">
+<h1>HTMLを変換してみる</h1>
+</section>
 <section id="例-connpassのhtmlからmarkdownを求めたい" class="slide level1">
 <h1>例: connpassのHTMLからMarkdownを求めたい</h1>
-</section>
-<section id="準備の際に実際にやりました" class="slide level1">
-<h1>準備の際に実際にやりました</h1>
 <ul>
+<li>準備の際に実際にやりました</li>
 <li>オーガナイザーさんにconnpassページ原稿を渡したい</li>
 <li>やっぱりMarkdownで書きたい
 <ul>
@@ -463,6 +464,31 @@ transition: fade
 <section id="pandocでmarkdownに変換" class="slide level1">
 <h1>PandocでMarkdownに変換</h1>
 <pre><code>$ pandoc connpass.html -t markdown_github -o connpass.md</code></pre>
+</section>
+<section id="latexを変換してみる" class="slide level1">
+<h1>LaTeXを変換してみる</h1>
+</section>
+<section id="latexを変換してみる-1" class="slide level1">
+<h1>LaTeXを変換してみる</h1>
+<ul>
+<li>注意: 文字コードはUTF-8に統一してください</li>
+<li>サンプル
+<ul>
+<li><a href="http://www.comp.tmu.ac.jp/tsakai/lectures/intro_tex.html">TeX入門</a></li>
+<li><code>$ cd ../example-paper</code></li>
+<li><code>input.tex</code>というファイル</li>
+</ul></li>
+</ul>
+</section>
+<section id="latexを変換してみる-2" class="slide level1">
+<h1>LaTeXを変換してみる</h1>
+<pre><code>$ pandoc input.tex -s -o output.docx</code></pre>
+</section>
+<section id="スタイルを変更する割愛" class="slide level1">
+<h1>スタイルを変更する（割愛）</h1>
+<ul>
+<li>参考: <a href="http://qiita.com/sky_y/items/aab3f93a32a711a54e74">プログラマの文書作成術：Markdown, LaTeXなどの文書からWord文書を生成する - Qiita</a></li>
+</ul>
 </section>
 <section id="質問作業もくもく会" class="slide level1">
 <h1>質問・作業・もくもく会</h1>

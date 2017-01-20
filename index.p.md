@@ -325,12 +325,13 @@ $ open index.html    # Mac/Linux
 
 ----
 
-# 例: connpassのHTMLからMarkdownを求めたい
+# HTMLを変換してみる
 
 ----
 
-# 準備の際に実際にやりました
+# 例: connpassのHTMLからMarkdownを求めたい
 
+- 準備の際に実際にやりました
 - オーガナイザーさんにconnpassページ原稿を渡したい
 - やっぱりMarkdownで書きたい
     - [connpass自体はMarkdown記法を持っている](http://help.connpass.com/organizers/markdown)
@@ -369,6 +370,34 @@ $ open index.html    # Mac/Linux
 ```
 $ pandoc connpass.html -t markdown_github -o connpass.md
 ```
+
+----
+
+# LaTeXを変換してみる
+
+----
+
+# LaTeXを変換してみる
+
+- 注意: 文字コードはUTF-8に統一してください
+- サンプル
+    - [TeX入門](http://www.comp.tmu.ac.jp/tsakai/lectures/intro_tex.html)
+    - `$ cd ../example-paper`
+    - `input.tex`というファイル
+
+----
+
+# LaTeXを変換してみる
+
+```
+$ pandoc input.tex -s -o output.docx
+```
+
+----
+
+# スタイルを変更する（割愛）
+
+- 参考: [プログラマの文書作成術：Markdown, LaTeXなどの文書からWord文書を生成する - Qiita](http://qiita.com/sky_y/items/aab3f93a32a711a54e74)
 
 ----
 
