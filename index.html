@@ -33,14 +33,55 @@
   <p class="date">2017年1月20日</p>
 </section>
 
-<section id="このスライドをどう作ったか" class="slide level1">
-<h1>このスライドをどう作ったか</h1>
+<section id="簡単な自己紹介" class="slide level1">
+<h1>簡単な自己紹介</h1>
+</section>
+<section id="準備-pandocをインストールする" class="slide level1">
+<h1>準備: Pandocをインストールする</h1>
+</section>
+<section id="このスライドを自分で作ろう" class="slide level1">
+<h1>このスライドを自分で作ろう</h1>
+</section>
+<section id="pandocで作れるスライド" class="slide level1">
+<h1>Pandocで作れるスライド</h1>
+<ul>
+<li>今回は「reveal.js」形式に変換
+<ul>
+<li>HTML+JavaScriptによるプレゼンテーション</li>
+</ul></li>
+<li>Pandocでは他のプレゼン形式にも変換できる
+<ul>
+<li>LaTeX Beamer</li>
+<li>reveal.js以外のHTMLプレゼン（割愛）</li>
+</ul></li>
+</ul>
+</section>
+<section id="実際のソースコード" class="slide level1">
+<h1>実際のソースコード</h1>
+<ul>
+<li>このスライド自体はGitHub Pagesでアップされています</li>
+<li>GitHubリポジトリ: <a href="https://github.com/sky-y/haskell-skype-pandoc-1" class="uri">https://github.com/sky-y/haskell-skype-pandoc-1</a>
+<ul>
+<li>Markdown (raw): <a href="https://raw.githubusercontent.com/sky-y/haskell-skype-pandoc-1/master/index.p.md" class="uri">https://raw.githubusercontent.com/sky-y/haskell-skype-pandoc-1/master/index.p.md</a></li>
+</ul></li>
+</ul>
 </section>
 <section id="reveal.jsのライブラリを入れる" class="slide level1">
 <h1>reveal.jsのライブラリを入れる</h1>
 <ul>
+<li>本来の手順
+<ul>
 <li><a href="https://github.com/hakimel/reveal.js/releases">Releases · hakimel/reveal.js</a> の「Downloads」にあるzipまたはtar.gzをダウンロードし、展開する</li>
-<li>フォルダの中身のうち、<strong>index.html以外</strong>を全て目的のフォルダにコピーする</li>
+<li>フォルダの中の<code>index.html</code>を書き換えて、ダブルクリックするとそのままブラウザで動く</li>
+</ul></li>
+<li>今回
+<ul>
+<li>テーマ(CSS)をカスタマイズしている
+<ul>
+<li>このスライドでは<code>sky</code>をカスタマイズしたCSS(<code>sky-sky-y</code>)を作った</li>
+<li>上記のGitHubリポジトリの「reveal.js-3.4.0/css/theme」に置いている</li>
+</ul></li>
+</ul></li>
 </ul>
 </section>
 <section id="markdownを書く" class="slide level1">
@@ -48,15 +89,47 @@
 <ul>
 <li>PandocのMarkdownで書く
 <ul>
-<li><a href="http://pandoc.org/MANUAL.html#pandocs-markdown">Pandoc - Pandoc User’s Guide</a></li>
+<li><a href="http://pandoc.org/MANUAL.html#pandocs-markdown">Pandoc - Pandoc User’s Guide</a>
+<ul>
+<li><a href="http://sky-y.github.io/site-pandoc-jp/users-guide/">Pandoc ユーザーズガイド 日本語版</a></li>
 </ul></li>
-<li>このスライド自体はGitHub Pagesでアップされています</li>
-<li>ソースコード:</li>
+</ul></li>
 </ul>
 </section>
-<section id="pandoc" class="slide level1">
-<h1>pandoc</h1>
-<pre><code>$ pandoc -s index.md -t revealjs -o index.html</code></pre>
+<section id="ヘッダに色々書く" class="slide level1">
+<h1>ヘッダに色々書く</h1>
+<ul>
+<li>ヘッダには2種類ある
+<ul>
+<li>Title block (<code>%</code>ではじまる、簡潔)</li>
+<li>YAML metadata (<code>---</code>ではじまり<code>...</code>でおわる、高機能)
+<ul>
+<li>テンプレート内で使用するための変数を埋め込める</li>
+</ul></li>
+</ul></li>
+<li>詳細はユーザーズガイドの「<a href="http://pandoc.org/MANUAL.html#producing-slide-shows-with-pandoc">Producing slide shows with pandoc</a>」を参照</li>
+</ul>
+</section>
+<section class="slide level1">
+
+<pre><code>---
+title: Pandocチュートリアル 第1回 Pandocでドキュメントを変換しよう
+author: 藤原 惟 / すかいゆき (@sky\_y)
+date: 2017年1月20日
+revealjs-url: reveal.js-3.4.0
+theme: sky-sky-y
+transition: fade
+（略）
+...</code></pre>
+</section>
+<section id="pandocコマンド" class="slide level1">
+<h1>pandocコマンド</h1>
+<pre><code>$ pandoc index.p.md -s -t revealjs -o index.html</code></pre>
+<ul>
+<li><code>-s</code>: standalone (ヘッダ付きの完全なファイルを出力)</li>
+<li><code>-t</code>: 出力フォーマット(reveal.js)</li>
+<li><code>-o</code>: 出力ファイル名</li>
+</ul>
 </section>
 <section id="例-connpassのhtmlからmarkdownを求めたい" class="slide level1">
 <h1>例: connpassのHTMLからMarkdownを求めたい</h1>

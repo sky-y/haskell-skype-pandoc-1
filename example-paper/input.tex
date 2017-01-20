@@ -1,0 +1,50 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  研究リテラシー「TeX入門」
+%%  酒井 高司
+%%  2016/05/18
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[11pt]{jarticle} %jarticleクラスを使用，文字サイズを11ポイントに設定
+\setlength{\textheight}{23cm} %本文領域の高さ（縦幅）を23cmに設定
+\setlength{\textwidth}{16cm} %本文領域の横幅を16cmに設定
+\setlength{\oddsidemargin}{0cm} %左端の余白をデフォルトから0cmに設定
+\setlength{\topmargin}{0cm} %上端の余白をデフォルトから0cmに設定
+\renewcommand{\baselinestretch}{1.2} %行間をデフォルトの1.2倍に設定
+\title{\TeX 入門} %タイトルを記入
+\author{酒井 高司\\（首都大学東京理工学研究科数理情報科学専攻）} %著者名を記入
+\date{\today} %日付を記入
+\begin{document}
+\maketitle %この位置にタイトルを作成
+\begin{abstract} %ここに概要を記入
+\LaTeX の使い方の解説です．
+\end{abstract}
+
+\tableofcontents %この位置に目次を作成
+
+\section{\TeX について} %セクションを作成
+
+\TeX （「テフ」と読む）はDonald Ervin Knuth氏が製作した組版システムです．
+現在ではKnuth氏が作った\TeX をもとにたくさんのバージョンが存在します．
+講義では現在一般的に用いられている日本語\TeX である
+p\LaTeXe （ピー・ラテフ・トゥー・イー）の使い方を学びます．
+詳しい使い方については\cite{Okumura,Yoshinaga,Shimizu}を参照して下さい．
+
+\subsection{\TeX の特徴} %セクションの中にサブセクションを作成
+
+TeXには次のような特徴があります．
+\begin{itemize}
+\item フリーウェアである．ソースコードも公開されている．
+\item Windows, Macintosh, LinuxなどほとんどすべてのOS上で動作する．
+\item 数式を表示する機能に優れている．複雑な数式もきれいに出力させることができる．
+\item 式番号や文献の参照の管理を自動的に行ってくれる．
+\item 文章のレイアウトを自動的に決めてくれる．
+一方で自分で指定する自由度も高く，レイアウトを細かく指定することもできる．
+\item 標準化が徹底されており，高い再現性をもつ．
+\item テキスト形式で入力するため，データを長期的に利用できる．
+\end{itemize}
+
+\begin{thebibliography}{9} %この位置に文献表を作成
+\bibitem{Okumura} 奥村晴彦「\LaTeXe 美文書作成入門」（技術評論社）
+\bibitem{Yoshinaga} 吉永徹美「独習\LaTeXe 」（翔泳社）
+\bibitem{Shimizu} 清水美樹「はじめての\LaTeX 」（工学社）
+\end{thebibliography}
+\end{document}

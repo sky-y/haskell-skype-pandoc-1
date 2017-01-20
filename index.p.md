@@ -12,14 +12,46 @@ slideNumber: true
 margin: 0
 ...
 
-# このスライドをどう作ったか
+----
+
+# 簡単な自己紹介
 
 ----
 
+# 準備: Pandocをインストールする
+
+----
+
+# このスライドを自分で作ろう
+
+----
+
+# Pandocで作れるスライド
+
+- 今回は「reveal.js」形式に変換
+    - HTML+JavaScriptによるプレゼンテーション
+- Pandocでは他のプレゼン形式にも変換できる
+    - LaTeX Beamer
+    - reveal.js以外のHTMLプレゼン（割愛）
+
+----
+
+# 実際のソースコード
+
+- このスライド自体はGitHub Pagesでアップされています
+- GitHubリポジトリ: <https://github.com/sky-y/haskell-skype-pandoc-1>
+    - Markdown (raw): <https://raw.githubusercontent.com/sky-y/haskell-skype-pandoc-1/master/index.p.md>
+
+
 # reveal.jsのライブラリを入れる
 
-- [Releases · hakimel/reveal.js](https://github.com/hakimel/reveal.js/releases) の「Downloads」にあるzipまたはtar.gzをダウンロードし、展開する
-- フォルダの中身のうち、**index.html以外**を全て目的のフォルダにコピーする
+- 本来の手順
+    - [Releases · hakimel/reveal.js](https://github.com/hakimel/reveal.js/releases) の「Downloads」にあるzipまたはtar.gzをダウンロードし、展開する
+    - フォルダの中の`index.html`を書き換えて、ダブルクリックするとそのままブラウザで動く
+- 今回
+    - テーマ(CSS)をカスタマイズしている
+        - このスライドでは`sky`をカスタマイズしたCSS(`sky-sky-y`)を作った
+        - 上記のGitHubリポジトリの「reveal.js-3.4.0/css/theme」に置いている
 
 ----
 
@@ -27,16 +59,43 @@ margin: 0
 
 - PandocのMarkdownで書く
     - [Pandoc - Pandoc User’s Guide](http://pandoc.org/MANUAL.html#pandocs-markdown)
-- このスライド自体はGitHub Pagesでアップされています
-- ソースコード:
+        - [Pandoc ユーザーズガイド 日本語版](http://sky-y.github.io/site-pandoc-jp/users-guide/)
 
 ----
 
-# pandoc
+# ヘッダに色々書く
+
+- ヘッダには2種類ある
+    - Title block (`%`ではじまる、簡潔)
+    - YAML metadata (`---`ではじまり`...`でおわる、高機能)
+        - テンプレート内で使用するための変数を埋め込める
+- 詳細はユーザーズガイドの「[Producing slide shows with pandoc](http://pandoc.org/MANUAL.html#producing-slide-shows-with-pandoc)」を参照
+
+----
 
 ```
-$ pandoc -s index.md -t revealjs -o index.html
+---
+title: Pandocチュートリアル 第1回 Pandocでドキュメントを変換しよう
+author: 藤原 惟 / すかいゆき (@sky\_y)
+date: 2017年1月20日
+revealjs-url: reveal.js-3.4.0
+theme: sky-sky-y
+transition: fade
+（略）
+...
 ```
+
+----
+
+# pandocコマンド
+
+```
+$ pandoc index.p.md -s -t revealjs -o index.html
+```
+
+- `-s`: standalone (ヘッダ付きの完全なファイルを出力)
+- `-t`: 出力フォーマット(reveal.js)
+- `-o`: 出力ファイル名
 
 ----
 
