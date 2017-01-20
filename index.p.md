@@ -195,7 +195,7 @@ margin: 0
 # wkhtmltopdfのインストール
 
 - パッケージを直接落としてインストール
-    1. [ここからパッケージをダウンロード](https://github.com/jgm/pandoc/releases/latest)
+    1. [ここからパッケージをダウンロード](http://wkhtmltopdf.org/downloads.html)
         - Windowsは未検証ですが、MinGWの方を試してみてください
     2. インストール
 - パッケージマネージャでインストール
@@ -221,7 +221,7 @@ $ echo "**Hello**" | pandoc -f markdown -t html
 # 動作確認: Pandoc + wkhtmltopdf (PDF)
 
 ```
-$ echo "**Hello**" | pandoc -f markdown -t html -o hello.pdf
+$ echo "**Hello**" | pandoc -f markdown -t html5 -o hello.pdf
 ```
 
 ----
@@ -418,3 +418,9 @@ $ pandoc input.tex -s -o output.docx
     - Excel文書など→Excel方眼紙への対策には致命的
     - サードパーティのプリプロセッサにより部分的に変換する手段はある
         - 一部の図表（Graphvizなど）はこの方法で取り込むことができる
+
+----
+
+# 数式プレビュー
+
+$$E = mc^2$$

@@ -273,7 +273,7 @@
 <ul>
 <li>パッケージを直接落としてインストール
 <ol type="1">
-<li><a href="https://github.com/jgm/pandoc/releases/latest">ここからパッケージをダウンロード</a>
+<li><a href="http://wkhtmltopdf.org/downloads.html">ここからパッケージをダウンロード</a>
 <ul>
 <li>Windowsは未検証ですが、MinGWの方を試してみてください</li>
 </ul></li>
@@ -299,7 +299,7 @@ $ echo &quot;**Hello**&quot; | pandoc -f markdown -t html
 </section>
 <section id="動作確認-pandoc-wkhtmltopdf-pdf" class="slide level1">
 <h1>動作確認: Pandoc + wkhtmltopdf (PDF)</h1>
-<pre><code>$ echo &quot;**Hello**&quot; | pandoc -f markdown -t html -o hello.pdf</code></pre>
+<pre><code>$ echo &quot;**Hello**&quot; | pandoc -f markdown -t html5 -o hello.pdf</code></pre>
 </section>
 <section id="このスライドを自分で作ろう" class="slide level1">
 <h1>このスライドを自分で作ろう</h1>
@@ -517,6 +517,10 @@ transition: fade
 </ul></li>
 </ul></li>
 </ul>
+</section>
+<section id="数式プレビュー" class="slide level1">
+<h1>数式プレビュー</h1>
+<p><br /><span class="math display"><em>E</em> = <em>m</em><em>c</em><sup>2</sup></span><br /></p>
 </section>
     </div>
   </div>
