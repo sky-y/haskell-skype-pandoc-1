@@ -146,4 +146,3 @@ PandocでMarkdownに変換
 -   Slackにて受け付けます
 -   TwitterでもOKです
     -   [@sky\_y | Twitter](https://twitter.com/sky_y)
-
